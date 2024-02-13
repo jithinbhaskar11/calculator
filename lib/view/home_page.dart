@@ -26,7 +26,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-     //backgroundColor: Colors.deepPurple[50],
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -120,12 +119,12 @@ class _HomePageState extends State<HomePage> {
   }
 
   void equalPressed() {
-    String finalProblome=problem;
-    finalProblome=finalProblome.replaceAll('x', '*');
-    finalProblome = finalProblome.replaceAll('%', '/100*');
+    String finalProblem=problem;
+    finalProblem=finalProblem.replaceAll('x', '*');
+    finalProblem = finalProblem.replaceAll('%', '/100*');
 
     Parser p = Parser();
-    Expression exp = p.parse(finalProblome);
+    Expression exp = p.parse(finalProblem);
     ContextModel cm = ContextModel();
     double eval = exp.evaluate(EvaluationType.REAL, cm);
 
